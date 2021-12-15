@@ -1,8 +1,8 @@
 /* Set up the experiment. Define variables and preload images. */
 // Create timeline
+// Mimi comments
+// Garrett test
 
-
-//testing push!
 
 var experiment = [];
 experiment.push({
@@ -55,12 +55,11 @@ var images = ["../static/images/arrow.png",
 /* Stimulus HTML template for the choice screen: USE TABLE FOR TRIAL INFO*/
 
 var trialStimTemplate =
-    "<p style=\"position:absolute;top:380px;left:405px;\"id='left_selection_prompt' >Press LEFT arrow to select.</p>" +
-    "<p style=\"position:absolute;top:380px;left:825px;\"id='right_selection_prompt' ></p>" +
-    "<p style=\"position:absolute;margin-top: 86px;top:80px;left:120px;\"id='p1string' ></p>" +
-    "<p style=\"position:absolute;margin-top: 86px;top:80px;left:465px;\"id='p2string' ></p>" +
-    "<p style=\"position:absolute;margin-top: 86px;top:80px;left:805px;\"id='p3string' ></p>" +
-    "<p style=\"position:absolute;margin-top: 86px;top:80px;left:1145px;\"id='userstring' ></p>" +
+
+    "<p style=\"position:absolute;margin-top: 86px;top:80px;left:120px;\" id='p1string' ></p>" +
+    "<p style=\"position:absolute;margin-top: 86px;top:80px;left:465px;\" id='p2string' ></p>" +
+    "<p style=\"position:absolute;margin-top: 86px;top:80px;left:805px;\" id='p3string' ></p>" +
+    "<p style=\"position:absolute;margin-top: 86px;top:80px;left:1145px;\" id='userstring' ></p>" +
     "<img style=\"position:absolute;outline-color:black;outline-style: solid;margin-top: 40px;top:180px;left:115px;width:160px;height:160px;\" id='p1'> " +
     "<img style=\"position:absolute;outline-color:black;outline-style: solid;margin-top: 40px;top:180px;left:465px;width:160px;height:160px;\" id='p2'> " +
     "<img style=\"position:absolute;outline-color:black;outline-style: solid;margin-top: 40px;top:180px;left:805px;width:160px;height:160px;\" id='p3'> " +
@@ -68,7 +67,11 @@ var trialStimTemplate =
     "<hr style='position:absolute;height:2px;border-width:0;left:135px;color:black;background-color:black;width:1200px;margin-top: 1px;'>" +
     "<img src='../static/images/blank.png' alt='blank'  id='blank' onload='setDisplay()'> " +
     "<img style=\"position:absolute;outline-color:black;outline-style: solid;margin-top: 80px;top:430px;left:425px;width:160px;height:160px;\" id='imgLeft'> " +
-    "<img style=\"position:absolute;outline-color:black;outline-style: solid;margin-top: 80px;top:430px;left:850px;width:160px;height:160px;\" id='imgRight'> "
+    "<img style=\"position:absolute;outline-color:black;outline-style: solid;margin-top: 80px;top:430px;left:850px;width:160px;height:160px;\" id='imgRight'> " +
+    "<div id='prompt'>" +
+    "<p style=\"position:absolute;top:750px;left:385px;display:inline-block;\" id='left_selection_prompt' ></p>" +
+    "<p style=\"position:absolute;top:750px;left:800px;display:inline-block;\" id='right_selection_prompt' ></p>" +
+    "</div>"
 
 
 
@@ -89,18 +92,19 @@ function setDisplay() {
 
     leftPrompt.innerHTML = 'Press LEFT arrow to select.'
     rightPrompt.innerHTML = 'Press RIGHT arrow to select.'
-    leftPrompt.style.fontSize = "40px";
-    rightPrompt.style.fontSize = "40px";
+    leftPrompt.style.fontSize = "20px";
+    rightPrompt.style.fontSize = "20px";
 
     if (select === 2) {
-        leftPrompt.style.top = "560px";
-        rightPrompt.style.top = "560px";
-        leftPrompt.style.left = "445px";
-        rightPrompt.style.left = "865px";
+        leftPrompt.style.top = "750px";
+        rightPrompt.style.top = "750px";
+        leftPrompt.style.left = "458px";
+        rightPrompt.style.left = "878px";
         leftPrompt.style.fontSize = "40px";
         rightPrompt.style.fontSize = "40px";
         leftPrompt.innerHTML = '$' + rewRight[0]
         rightPrompt.innerHTML = '$' + rewRight[1]
+        console.log(leftPrompt)
     }
 
 
@@ -476,7 +480,7 @@ var showSelect = {
 
 var showReward = {
     type: "html-keyboard-response",
-    trial_duration: 2000,
+    trial_duration: 2500,
     choices: jsPsych.NO_KEYS,
     stimulus: function() {
         select = 2;

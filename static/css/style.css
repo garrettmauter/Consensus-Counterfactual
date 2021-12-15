@@ -149,16 +149,17 @@ table {
 }
 
 
+
 p#left_selection_prompt {
-    position: relative;
+    /*position: relative;
     top: 80%;
     left: 95px;
-    display: none;
+    display: block;*/
 }
 
 p#right_selection_prompt {
-    position: relative;
+    /*position: relative;
     top: 80%;
     right: -95px;
-    display: none;
+    display: block;*/
 }
